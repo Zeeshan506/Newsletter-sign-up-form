@@ -31,8 +31,8 @@ It was implemented using **HTML**, **Tailwind CSS**, and **Vanilla JavaScript**.
 
 ## Live Demo
 
-- **Live Site:** [Netlify Site](#)
-- **Frontend Mentor Solution Page:** [click here](#)
+- **Live Site:** [Netlify Site](https://newspaperform506.netlify.app/)
+- **Frontend Mentor Solution Page:** [click here](https://www.frontendmentor.io/solutions/newspaper-sign-up-form-tailwind-css-7C2ONY6N13)
 
 ## Where and What JavaScript Was Used
 
