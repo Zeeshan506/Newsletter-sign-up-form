@@ -1,52 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: "Roboto-Bold";
+        src: url(/assets/fonts/Roboto-Bold.ttf);
+        font-weight: bold;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Roboto-Regular";
+        src: url(/assets/fonts/Roboto-Regular.ttf);
+        font-weight: normal;
+        font-style: normal;
+      }
+      h1 {
+        font-family: "Roboto-Bold";
+      }
+    </style>
+  </head>
+  <body
+    style="font-family: 'Roboto-Regular'"
+    class="min-h-screen flex flex-col md:justify-center md:items-center bg-[#242742ff]"
+  >
+    <!-- Sign-up form start -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <div
+      id="formContainer"
+      class="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 bg-white mx-auto h-screen lg:p-3 md:h-auto w-full md:w-[75%] lg:w-[60%] md:rounded-2xl"
+    >
+      <div class="flex justify-center lg:justify-end lg:order-2">
+        <img
+          class="hidden lg:block object-cover"
+          src="./assets/images/illustration-sign-up-desktop.svg"
+          alt="illustration-sign-up-desktop"
+        />
+        <img
+          class="hidden md:block lg:hidden w-full"
+          src="./assets/images/illustration-sign-up-tablet.svg"
+          alt="illustration-sign-up-desktop"
+        />
+        <img
+          class="block md:hidden w-full object-cover object-center mt-[-15px]"
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="illustration-sign-up-mobile"
+        />
+      </div>
+      <div
+        class="flex flex-col border border-white lg:gap-10 gap-4 justify-center px-4 lg:ml-6 ml-4 pb-8"
+      >
+        <div class="flex flex-col">
+          <h1
+            class="text-[#36384eff] text-3xl lg:text-5xl font-bold text-left mt-6 lg:mt-0 mb-4"
+          >
+            Stay updated!
+          </h1>
+          <p class="text-[#36384eff] text-lg text-left text-wrap">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+        </div>
 
-  <!-- Sign-up form start -->
+        <div class="flex flex-col gap-3 justify-evenly">
+          <div class="flex flex-row gap-3 justify-start">
+            <img src="/assets/images/icon-list.svg" alt="" />
+            <p>Product discovery and building what matters</p>
+          </div>
+          <div class="flex flex-row gap-3 justify-start">
+            <img src="/assets/images/icon-list.svg" alt="" />
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+          <div class="flex flex-row gap-3 justify-start">
+            <img src="/assets/images/icon-list.svg" alt="" />
+            <p>And much more!</p>
+          </div>
+        </div>
 
-  Stay updated!
+        <form
+          class="flex flex-col gap-4 lg:gap-6 mt-5 lg:mt-4"
+          id="form"
+          novalidate
+        >
+          <div class="relative flex flex-col gap-2">
+            <p
+              id="errorText"
+              class="absolute right-0 text-[#ff6257ff] text-sm font-extrabold hidden"
+            >
+              Valid Email Required
+            </p>
+            <label for="email" class="text-[#36384eff] text-sm font-extrabold"
+              >Email address</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="email@company.com"
+              class="border border-[#949494ff] rounded-lg p-4"
+            />
+          </div>
+          <button
+            type="submit"
+            id="submit"
+            class="bg-[#242742ff] text-white text-lg py-4 rounded-lg hover:bg-[#ff6257ff]/80"
+          >
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </div>
 
-  Join 60,000+ product managers receiving monthly updates on:
+    <!-- Sign-up form end -->
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+    <!-- Success message start -->
+    <div
+      id="successMessage"
+      class="flex flex-col justify-center bg-white p-8 gap-4 h-screen md:h-auto md:rounded-2xl w-full md:w-[50%] lg:w-[25%] hidden"
+    >
+      <img
+        src="./assets/images/icon-success.svg"
+        alt="icon-success"
+        class="mr-auto"
+      />
+      <h1 class="text-[#242742ff] text-5xl text-wrap text-left mt-4">
+        Thanks for subscribing!
+      </h1>
 
-  Email address
-  email@company.com
+      <p class="text-sm">
+        A confirmation email has been sent to
+        <span id="emailSuccess" class="font-bold">ash@loremcompany.com.</span>
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button
+        type="submit"
+        id="Dismiss"
+        class="bg-[#242742ff] text-white text-lg py-4 rounded-lg hover:bg-[#ff6257ff]/80"
+      >
+        Dismiss message
+      </button>
+    </div>
 
-  Subscribe to monthly newsletter
+    <!-- Success message end -->
 
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution hidden">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="/index.js"></script>
+  </body>
 </html>

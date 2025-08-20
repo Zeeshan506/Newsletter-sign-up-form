@@ -13,14 +13,14 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Red: hsl(4, 100%, 67%)
+- Red: #ff6257ff
 
 ### Neutral
 
-- Blue 800: hsl(234, 29%, 20%)
-- Blue 700: hsl(235, 18%, 26%)
-- Grey: hsl(0, 0%,58%)
-- White: hsl(0, 0%, 100%)
+- Blue 800: #242742ff
+- Blue 700: #36384eff
+- Grey: #949494ff
+- White: #ffffffff
 
 ## Typography
 
